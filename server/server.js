@@ -1,7 +1,6 @@
-import express from "express";
-import { getAllCards } from "./controllers/cards.controller.js";
+import app from "./app.js";
+import cardsRouter from "./routes/cards.router.js";
 
-const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use((req, res, next) => {
@@ -11,9 +10,7 @@ app.use((req, res, next) => {
   console.log(`${req.method} ${req.baseUrl}${req.url} ${delta}ms`);
 });
 
-app.use(express.json());
-
-app.use("/cards", getAllCards);
+app.use("/cards", cardsRouter);
 
 app.listen(PORT, () => {
   console.log(`Listening on PORT ${PORT}...`);

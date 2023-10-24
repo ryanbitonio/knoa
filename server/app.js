@@ -2,4 +2,6 @@ import express from "express";
 
 const app = express();
 
-export { app, express };
+app.use(express.json());
+
+export default app;
