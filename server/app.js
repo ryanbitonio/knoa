@@ -1,6 +1,7 @@
 import express from "express";
 import cardsRouter from "./routes/cards.router.js";
 import cors from "cors";
+import helmet from "helmet";
 
 const app = express();
 
@@ -10,6 +11,8 @@ app.use(
     credentials: true,
   })
 );
+
+app.use(helmet());
 
 app.use((req, res, next) => {
   const start = Date.now();
