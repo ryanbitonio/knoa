@@ -1,5 +1,5 @@
 import express from "express";
-import cardsRouter from "./routes/cards.router.js";
+import weddingCardsRouter from "./routes/weddingCards.router.js";
 import cors from "cors";
 import helmet from "helmet";
 
@@ -21,7 +21,7 @@ app.use((req, res, next) => {
   console.log(`${req.method} ${req.baseUrl}${req.url} ${delta}ms`);
 });
 
-app.use("/cards", cardsRouter);
+app.use("/wedding-cards", weddingCardsRouter);
 
 app.use(express.json());
 
