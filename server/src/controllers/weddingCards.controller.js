@@ -1,5 +1,6 @@
-import cards from "../models/weddingCards.model.js";
+import { getAllWeddingCards } from "../models/weddingCards.model.js";
 
-export const getAllWeddingCards = (req, res) => {
-  res.json(cards);
+export const HttpGetAllWeddingCards = async (req, res) => {
+  const result = await getAllWeddingCards();
+  await res.json(result);
 };

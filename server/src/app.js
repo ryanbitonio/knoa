@@ -14,6 +14,8 @@ app.use(
 
 app.use(helmet());
 
+app.use(express.json());
+
 app.use((req, res, next) => {
   const start = Date.now();
   next();
@@ -22,7 +24,5 @@ app.use((req, res, next) => {
 });
 
 app.use("/wedding-cards", weddingCardsRouter);
-
-app.use(express.json());
 
 export default app;
