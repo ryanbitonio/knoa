@@ -5,16 +5,16 @@
 @tailwind utilities;
 
 @layer base {
-  p {
-    font-family: "Noto Serif", system-ui, sans-serif;
-  }
-
-  h1,
+  p,
   h2,
   h3,
   h4,
   h5,
   h6 {
+    font-family: "Noto Serif", system-ui, sans-serif;
+  }
+
+  h1 {
     font-family: "Noto Serif Display", system-ui, sans-serif;
   }
 }
