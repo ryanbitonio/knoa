@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
 import scheduleImage from "../../assets/schedule-img.jpg";
 
 const Schedule = () => {
@@ -20,7 +19,6 @@ const Schedule = () => {
           <h3 className="lg:text-2xl">
             Knoa’s Dedication <br />& Birthday Celebration
           </h3>
-          <Separator className="mt-4" />
           <p className="leading-7 [&:not(:first-child)]:mt-6">
             Minuyan San Jose Evangelical Church <br />
             Bitonio’s Residence
