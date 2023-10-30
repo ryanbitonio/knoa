@@ -1,6 +1,5 @@
 import welcomeImage from "../../assets/welcome-img.jpg";
 import { Button } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
 
 const Welcome = () => {
   return (
@@ -13,7 +12,7 @@ const Welcome = () => {
         />
       </div>
       <div className="flex flex-col justify-center items-center gap-20">
-        <div className="flex flex-col items-center gap-20 text-center ">
+        <div className="h-screen flex flex-col justify-center items-center gap-20 text-center ">
           <p className="leading-7 [&:not(:first-child)]:mt-6">
             Ryan & Mary <br /> invite you to the <br /> dedication of their son
           </p>
@@ -21,17 +20,10 @@ const Welcome = () => {
             ZEKKE KNOA <br /> A. BITONIO
           </h1>
           <Button variant="outline">RSVP</Button>
+          <p className="leading-7 [&:not(:first-child)]:mt-6 after:content after:border-l-slate-950 after:border-solid after:border after:relative after:top-10 after:right-12 after:pb-24">
+            View Details
+          </p>
         </div>
-        <p className=" leading-7 [&:not(:first-child)]:mt-6">View Details</p>
-        <div
-          style={{
-            opacity: "30%",
-            borderLeft: "1px solid rgb(2 6 23)",
-            height: "200px",
-            position: "absolute",
-            bottom: 0,
-          }}
-        ></div>
       </div>
     </div>
   );
