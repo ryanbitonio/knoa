@@ -19,9 +19,9 @@ const Welcome = () => {
         <h1 className="scroll-m-20 text-4xl tracking-tight lg:text-5xl">
           ZEKKE KNOA <br /> A. BITONIO
         </h1>
-        <Button variant="outline">
-          <Link to="/rsvp">RSVP</Link>
-        </Button>
+        <Link to="/rsvp">
+          <Button variant="outline">RSVP</Button>
+        </Link>
         <p className="leading-7 [&:not(:first-child)]:mt-6 ">View Details</p>
       </div>
     </>
