@@ -5,15 +5,11 @@ export const rsvpName = [
 
 export const rsvpAttendance = [
   {
-    name: "contact",
-    formLabel: "",
-    placeholder: "Joyfully Accept",
-    answer: "true",
+    value: "accept",
+    label: "Joyfully Accept",
   },
   {
-    name: "contact",
-    formLabel: "",
-    placeholder: "Regretfully Decline",
-    answer: "true",
+    value: "decline",
+    label: "Regretfully Decline",
   },
 ];

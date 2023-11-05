@@ -20,7 +20,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
-import { rsvpName } from "../../data/rsvp";
+import { rsvpAttendance, rsvpName } from "../../data/rsvp";
 import { useNavigate } from "react-router-dom";
 
 const formSchema = z.object({
@@ -68,7 +68,7 @@ const Rsvp = () => {
                   name={name}
                   key={name}
                   render={({ field }) => (
-                    <FormItem>
+                    <FormItem className="mb-2">
                       <FormLabel>{formLabel}</FormLabel>
                       <FormControl>
                         <Input placeholder={placeholder} {...field} />
@@ -78,39 +78,41 @@ const Rsvp = () => {
                   )}
                 />
               ))}
-              <p className="leading-7 [&:not(:first-child)]:mt-6 mb-2">
+              <p className="leading-7 [&:not(:first-child)]:mt-4 mb-4">
                 Will you be able to join us at our son’s dedication?
               </p>
+
               <FormField
                 control={form.control}
                 name="response"
                 render={({ field }) => (
-                  <FormItem className="space-y-3">
+                  <FormItem>
                     <FormControl>
                       <RadioGroup
                         onValueChange={field.onChange}
                         defaultValue={field.value}
-                        className="flex flex-col"
                       >
-                        <FormItem className="flex justify-center items-center space-y-0 border border-solid border-slate-200 rounded-lg px-3 py-2 cursor-pointer">
-                          <FormControl>
-                            <RadioGroupItem value="accept" className="hidden" />
-                          </FormControl>
-                          <FormLabel className="font-normal text-sm cursor-pointer">
-                            Joyfully Accept
-                          </FormLabel>
-                        </FormItem>
-                        <FormItem className="flex justify-center items-center  space-y-0 border border-solid border-slate-200 rounded-lg px-3 py-2 cursor-pointer ">
-                          <FormControl>
-                            <RadioGroupItem
-                              value="decline"
-                              className="hidden"
-                            />
-                          </FormControl>
-                          <FormLabel className="font-normal text-sm cursor-pointer">
-                            Regretfully Decline
-                          </FormLabel>
-                        </FormItem>
+                        {rsvpAttendance.map(({ value, label }) => (
+                          <div
+                            tabIndex={0}
+                            className="border border-solid border-slate-200  focus:rounded-lg rounded-lg focus:outline-none focus:ring-2 focus:ring-slate-950 focus:ring-offset-2 "
+                          >
+                            <FormItem
+                              key={value}
+                              className="flex space-y-0 cursor-pointer"
+                            >
+                              <FormControl>
+                                <RadioGroupItem
+                                  value={value}
+                                  className="hidden "
+                                />
+                              </FormControl>
+                              <FormLabel className="w-full text-center py-2 font-normal text-sm cursor-pointer ">
+                                {label}
+                              </FormLabel>
+                            </FormItem>
+                          </div>
+                        ))}
                       </RadioGroup>
                     </FormControl>
                     <FormMessage />
