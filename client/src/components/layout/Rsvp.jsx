@@ -21,6 +21,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
 import { rsvpName } from "../../data/rsvp";
+import { useNavigate } from "react-router-dom";
 
 const formSchema = z.object({
   firstName: z.string().min(2).max(50),
@@ -31,6 +32,8 @@ const formSchema = z.object({
 });
 
 const Rsvp = () => {
+  const navigate = useNavigate();
+
   const form = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -41,7 +44,10 @@ const Rsvp = () => {
 
   function onSubmit(values) {
     console.log("check here", values);
+
     form.reset();
+
+    navigate("/");
   }
 
   return (
@@ -88,10 +94,7 @@ const Rsvp = () => {
                       >
                         <FormItem className="flex justify-center items-center space-y-0 border border-solid border-slate-200 rounded-lg px-3 py-2 cursor-pointer">
                           <FormControl>
-                            <RadioGroupItem
-                              value="accept"
-                              // className="hidden"
-                            />
+                            <RadioGroupItem value="accept" className="hidden" />
                           </FormControl>
                           <FormLabel className="font-normal text-sm cursor-pointer">
                             Joyfully Accept
@@ -101,7 +104,7 @@ const Rsvp = () => {
                           <FormControl>
                             <RadioGroupItem
                               value="decline"
-                              // className="hidden"
+                              className="hidden"
                             />
                           </FormControl>
                           <FormLabel className="font-normal text-sm cursor-pointer">

@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import welcomeImage from "../../assets/welcome-img.jpg";
+import { Link } from "react-router-dom";
 
 const Welcome = () => {
   return (
@@ -18,7 +19,9 @@ const Welcome = () => {
         <h1 className="scroll-m-20 text-4xl tracking-tight lg:text-5xl">
           ZEKKE KNOA <br /> A. BITONIO
         </h1>
-        <Button variant="outline">RSVP</Button>
+        <Button variant="outline">
+          <Link to="/rsvp">RSVP</Link>
+        </Button>
         <p className="leading-7 [&:not(:first-child)]:mt-6 ">View Details</p>
       </div>
     </>
