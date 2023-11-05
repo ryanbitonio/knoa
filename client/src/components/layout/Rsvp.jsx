@@ -16,15 +16,18 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
+import { rsvpName } from "../../data/rsvp";
 
 const formSchema = z.object({
   firstName: z.string().min(2).max(50),
   lastName: z.string().min(2).max(50),
-  accept: z.string().min(2).max(50),
-  decline: z.string().min(2).max(50),
+  response: z.enum(["accept", "decline"], {
+    required_error: "You need to select a response.",
+  }),
 });
 
 const Rsvp = () => {
@@ -33,98 +36,92 @@ const Rsvp = () => {
     defaultValues: {
       firstName: "",
       lastName: "",
-      accept: "",
-      decline: "",
     },
   });
 
   function onSubmit(values) {
-    console.log(values);
+    console.log("check here", values);
+    form.reset();
   }
 
   return (
     <div className="h-screen flex flex-col justify-center items-center bg-slate-50">
-      <Card>
-        <Form {...form}>
-          <CardHeader>
-            <CardTitle>RSVP</CardTitle>
-            <CardDescription>Dedication & birthday party</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-              <FormField
-                control={form.control}
-                name="firstName"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>First Name</FormLabel>
-                    <FormControl>
-                      <Input placeholder="First Name" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="lastName"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Last Name</FormLabel>
-                    <FormControl>
-                      <Input placeholder="Last Name" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <p className="leading-7 [&:not(:first-child)]:mt-6">
+      <Form {...form}>
+        <form onSubmit={form.handleSubmit(onSubmit)} autoComplete="off">
+          <Card>
+            <CardHeader>
+              <CardTitle>RSVP</CardTitle>
+              <CardDescription>
+                Dedication & birthday celebration
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              {rsvpName.map(({ name, formLabel, placeholder }) => (
+                <FormField
+                  control={form.control}
+                  name={name}
+                  key={name}
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>{formLabel}</FormLabel>
+                      <FormControl>
+                        <Input placeholder={placeholder} {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+              ))}
+              <p className="leading-7 [&:not(:first-child)]:mt-6 mb-2">
                 Will you be able to join us at our son’s dedication?
               </p>
               <FormField
                 control={form.control}
-                name="accept"
+                name="response"
                 render={({ field }) => (
-                  <FormItem>
-                    <FormLabel></FormLabel>
+                  <FormItem className="space-y-3">
                     <FormControl>
-                      <Input
-                        autoComplete="off"
-                        className="text-center text-transparent cursor-pointer placeholder:text-slate-950"
-                        placeholder="Joyfully Accept"
-                        {...field}
-                      />
+                      <RadioGroup
+                        onValueChange={field.onChange}
+                        defaultValue={field.value}
+                        className="flex flex-col"
+                      >
+                        <FormItem className="flex justify-center items-center space-y-0 border border-solid border-slate-200 rounded-lg px-3 py-2 cursor-pointer">
+                          <FormControl>
+                            <RadioGroupItem
+                              value="accept"
+                              // className="hidden"
+                            />
+                          </FormControl>
+                          <FormLabel className="font-normal text-sm cursor-pointer">
+                            Joyfully Accept
+                          </FormLabel>
+                        </FormItem>
+                        <FormItem className="flex justify-center items-center  space-y-0 border border-solid border-slate-200 rounded-lg px-3 py-2 cursor-pointer ">
+                          <FormControl>
+                            <RadioGroupItem
+                              value="decline"
+                              // className="hidden"
+                            />
+                          </FormControl>
+                          <FormLabel className="font-normal text-sm cursor-pointer">
+                            Regretfully Decline
+                          </FormLabel>
+                        </FormItem>
+                      </RadioGroup>
                     </FormControl>
                     <FormMessage />
                   </FormItem>
                 )}
               />
-              <FormField
-                control={form.control}
-                name="decline"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel></FormLabel>
-                    <FormControl>
-                      <Input
-                        autoComplete="off"
-                        className="text-center text-transparent cursor-pointer placeholder:text-slate-950"
-                        placeholder="Regretfully Decline"
-                        {...field}
-                      />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-            </form>
-          </CardContent>
-          <CardFooter className="flex justify-between">
-            <Button variant="outline">Cancel</Button>
-            <Button type="submit">Submit</Button>
-          </CardFooter>
-        </Form>
-      </Card>
+            </CardContent>
+            <CardFooter className="flex justify-between">
+              <Button variant="outline">Cancel</Button>
+              <Button type="submit">Submit</Button>
+            </CardFooter>
+          </Card>
+        </form>
+      </Form>
     </div>
   );
 };
