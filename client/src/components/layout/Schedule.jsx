@@ -11,7 +11,7 @@ const Schedule = () => {
           alt="baby welcome image"
         />
       </div>
-      <div className="mt-10 flex flex-col justify-center items-center gap-20 text-center">
+      <div className="flex flex-col justify-center items-center gap-20 text-center">
         <h1 className="scroll-m-20 text-4xl tracking-tight lg:text-5xl">
           Schedule
         </h1>
