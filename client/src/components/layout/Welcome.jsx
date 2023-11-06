@@ -7,16 +7,16 @@ const Welcome = () => {
     <>
       <div className="md:col-span-2">
         <img
-          className="sm:h-auto md:h-screen object-cover"
+          className="object-cover sm:h-auto md:h-screen"
           src={welcomeImage}
           alt="baby welcome image"
         />
       </div>
-      <div className="flex flex-col justify-center items-center gap-20 text-center ">
+      <div className="flex flex-col items-center justify-center gap-20 text-center ">
         <p className="leading-7 [&:not(:first-child)]:mt-6">
           Ryan & Mary <br /> invite you to the <br /> dedication of their son
         </p>
-        <h1 className="scroll-m-20 text-4xl tracking-tight lg:text-5xl">
+        <h1 className="text-4xl tracking-tight scroll-m-20 lg:text-5xl">
           ZEKKE KNOA <br /> A. BITONIO
         </h1>
         <Link to="/rsvp">

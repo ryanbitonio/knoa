@@ -6,13 +6,13 @@ const Schedule = () => {
     <>
       <div className="md:col-span-2">
         <img
-          className="sm:min-h-auto md:h-screen object-cover"
+          className="object-cover sm:min-h-auto md:h-screen"
           src={scheduleImage}
           alt="baby welcome image"
         />
       </div>
-      <div className="flex flex-col justify-center items-center gap-20 text-center">
-        <h1 className="scroll-m-20 text-4xl tracking-tight lg:text-5xl">
+      <div className="flex flex-col items-center justify-center gap-20 text-center">
+        <h1 className="text-4xl tracking-tight scroll-m-20 lg:text-5xl">
           Schedule
         </h1>
         <div className="">

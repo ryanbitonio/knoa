@@ -18,9 +18,10 @@ import {
 import { Input } from "@/components/ui/input";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { Loader2 } from "lucide-react";
 import { useForm } from "react-hook-form";
-import { rsvpAttendance, rsvpName } from "../../data/rsvp";
 import { Link, useNavigate } from "react-router-dom";
+import { rsvpAttendance, rsvpName } from "../../data/rsvp";
 import { formSchema } from "../../lib/validations/rsvp-form";
 
 const Rsvp = () => {
@@ -34,18 +35,23 @@ const Rsvp = () => {
     },
   });
 
+  const {
+    control,
+    formState: { isSubmitting },
+    handleSubmit,
+    reset,
+  } = form;
+
   function onSubmit(values) {
-    console.log("check here", values);
-
-    form.reset();
-
+    console.log(values);
+    reset();
     navigate("/");
   }
 
   return (
-    <div className="h-screen flex flex-col justify-center items-center bg-slate-50">
+    <div className="flex flex-col items-center justify-center h-screen bg-slate-50">
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} autoComplete="off">
+        <form onSubmit={handleSubmit(onSubmit)} autoComplete="off">
           <Card>
             <CardHeader>
               <CardTitle>RSVP</CardTitle>
@@ -56,7 +62,7 @@ const Rsvp = () => {
             <CardContent>
               {rsvpName.map(({ name, formLabel, placeholder }) => (
                 <FormField
-                  control={form.control}
+                  control={control}
                   name={name}
                   key={name}
                   render={({ field }) => (
@@ -75,7 +81,7 @@ const Rsvp = () => {
               </p>
 
               <FormField
-                control={form.control}
+                control={control}
                 name="response"
                 render={({ field }) => (
                   <FormItem>
@@ -88,7 +94,7 @@ const Rsvp = () => {
                           <div
                             key={value}
                             tabIndex={0}
-                            className="border border-solid border-slate-200  focus:rounded-lg rounded-lg focus:outline-none focus:ring-2 focus:ring-slate-950 focus:ring-offset-2 "
+                            className="border border-solid rounded-lg border-slate-200 focus:rounded-lg focus:outline-none focus:ring-2 focus:ring-slate-950 focus:ring-offset-2 "
                           >
                             <FormItem className="flex space-y-0 cursor-pointer">
                               <FormControl>
@@ -97,7 +103,7 @@ const Rsvp = () => {
                                   className="hidden "
                                 />
                               </FormControl>
-                              <FormLabel className="w-full text-center py-2 font-normal text-sm cursor-pointer ">
+                              <FormLabel className="w-full py-2 text-sm font-normal text-center cursor-pointer ">
                                 {label}
                               </FormLabel>
                             </FormItem>
@@ -114,7 +120,13 @@ const Rsvp = () => {
               <Link to="/">
                 <Button variant="outline">Cancel</Button>
               </Link>
-              <Button type="submit">Submit</Button>
+              <Button disabled={isSubmitting} type="submit">
+                {isSubmitting ? (
+                  <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                ) : (
+                  "Submit"
+                )}
+              </Button>
             </CardFooter>
           </Card>
         </form>

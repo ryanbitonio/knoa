@@ -4,7 +4,7 @@ import Welcome from "./components/layout/Welcome";
 
 function App() {
   return (
-    <div className="grid md:grid-cols-3 sm:grid-cols-1  h-screen ">
+    <div className="grid h-screen md:grid-cols-3 sm:grid-cols-1 ">
       <Welcome />
       <Schedule />
     </div>
