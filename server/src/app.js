@@ -1,5 +1,5 @@
 import express from "express";
-import weddingCardsRouter from "./routes/weddingCards.router.js";
+import guestsRouter from "./routes/guests.router.js";
 import cors from "cors";
 import helmet from "helmet";
 
@@ -23,6 +23,6 @@ app.use((req, res, next) => {
   console.log(`${req.method} ${req.baseUrl}${req.url} ${delta}ms`);
 });
 
-app.use("/wedding-cards", weddingCardsRouter);
+app.use("/guests", guestsRouter);
 
 export default app;
