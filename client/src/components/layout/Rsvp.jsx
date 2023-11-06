@@ -39,7 +39,7 @@ const Rsvp = () => {
 
   const {
     control,
-    formState: { isSubmitting, isSubmitSuccessful },
+    formState: { isSubmitting },
     handleSubmit,
     reset,
   } = form;
@@ -47,7 +47,7 @@ const Rsvp = () => {
   function onSubmit(values) {
     toast({
       title: "Successfully Added!",
-      description: "You have added a new contact.",
+      description: "We appreciate your response.",
       duration: 3000,
     });
     console.log(values);
