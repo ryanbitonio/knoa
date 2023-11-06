@@ -23,9 +23,11 @@ import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import { rsvpAttendance, rsvpName } from "../../data/rsvp";
 import { formSchema } from "../../lib/validations/rsvp-form";
+import { useToast } from "../ui/use-toast";
 
 const Rsvp = () => {
   const navigate = useNavigate();
+  const { toast } = useToast();
 
   const form = useForm({
     resolver: zodResolver(formSchema),
@@ -37,12 +39,17 @@ const Rsvp = () => {
 
   const {
     control,
-    formState: { isSubmitting },
+    formState: { isSubmitting, isSubmitSuccessful },
     handleSubmit,
     reset,
   } = form;
 
   function onSubmit(values) {
+    toast({
+      title: "Successfully Added!",
+      description: "You have added a new contact.",
+      duration: 3000,
+    });
     console.log(values);
     reset();
     navigate("/");
