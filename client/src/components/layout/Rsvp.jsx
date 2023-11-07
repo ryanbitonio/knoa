@@ -24,6 +24,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { rsvpAttendance, rsvpName } from "../../data/rsvp";
 import { formSchema } from "../../lib/validations/rsvp-form";
 import { useToast } from "../ui/use-toast";
+import axios from "axios";
 
 const Rsvp = () => {
   const navigate = useNavigate();
@@ -44,15 +45,21 @@ const Rsvp = () => {
     reset,
   } = form;
 
-  function onSubmit(values) {
-    toast({
-      title: "Successfully Added!",
-      description: "We appreciate your response.",
-      duration: 3000,
-    });
-    console.log(values);
-    reset();
-    navigate("/");
+  async function onSubmit(values) {
+    try {
+      await axios.post("http://localhost:3000/guests", values);
+
+      toast({
+        title: "Successfully Added!",
+        description: "We appreciate your response.",
+        duration: 3000,
+      });
+
+      reset();
+      navigate("/");
+    } catch (err) {
+      console.error(err);
+    }
   }
 
   return (

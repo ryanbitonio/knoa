@@ -1,8 +1,12 @@
-import { HttpGetAllGuests } from "../controllers/guests.controller.js";
+import {
+  httpGetAllGuests,
+  httpAddGuest,
+} from "../controllers/guests.controller.js";
 import express from "express";
 
 const guestsRouter = express.Router();
 
-guestsRouter.use("/", HttpGetAllGuests);
+guestsRouter.get("/", httpGetAllGuests);
+guestsRouter.post("/", httpAddGuest);
 
 export default guestsRouter;
