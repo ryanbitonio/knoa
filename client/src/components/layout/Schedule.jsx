@@ -5,14 +5,14 @@ import { Separator } from "@/components/ui/separator";
 const Schedule = () => {
   return (
     <>
-      <div className="md:col-span-2">
+      <div className="md:h-screen md:col-span-2">
         <img
           className="object-cover sm:min-h-auto md:h-screen"
           src={scheduleImage}
           alt="baby welcome image"
         />
       </div>
-      <div className="flex flex-col items-center justify-center gap-20 text-left">
+      <div className="flex flex-col items-center justify-center gap-32 text-left ">
         <h1 className="text-4xl tracking-tight scroll-m-20 lg:text-5xl">
           Schedule
         </h1>
