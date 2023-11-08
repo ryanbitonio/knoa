@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import welcomeImage from "../../assets/welcome-img.jpg";
 import { Link } from "react-router-dom";
+import { MoveDown } from "lucide-react";
 
 const Welcome = () => {
   return (
@@ -20,9 +21,14 @@ const Welcome = () => {
           ZEKKE KNOA <br /> A. BITONIO
         </h1>
         <Link to="/rsvp">
-          <Button variant="outline">RSVP</Button>
+          <Button variant="outline" className="">
+            RSVP
+          </Button>
         </Link>
-        <p className="leading-7 [&:not(:first-child)]:mt-6 ">View Details</p>
+        <div className="flex flex-col items-center gap-10">
+          <p className="leading-7 [&:not(:first-child)]:mt-6 ">View Details</p>
+          <MoveDown className="animate-bounce" />
+        </div>
       </div>
     </>
   );

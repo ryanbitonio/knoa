@@ -5,7 +5,7 @@ import { Toaster } from "./components/ui/toaster";
 
 function App() {
   return (
-    <div className="grid h-screen md:grid-cols-3 sm:grid-cols-1 ">
+    <div className="grid h-screen md:grid-cols-3 sm:grid-cols-1">
       <Welcome />
       <Schedule />
       <Toaster />

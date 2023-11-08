@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import scheduleImage from "../../assets/schedule-img.jpg";
-
+import { Calendar, MapPin } from "lucide-react";
+import { Separator } from "@/components/ui/separator";
 const Schedule = () => {
   return (
     <>
@@ -11,21 +12,30 @@ const Schedule = () => {
           alt="baby welcome image"
         />
       </div>
-      <div className="flex flex-col items-center justify-center gap-20 text-center">
+      <div className="flex flex-col items-center justify-center gap-20 text-left">
         <h1 className="text-4xl tracking-tight scroll-m-20 lg:text-5xl">
           Schedule
         </h1>
-        <div className="">
-          <h3 className="lg:text-2xl">
+        <div className="flex flex-col gap-6">
+          <h3 className="text-center lg:text-2xl">
             Knoa’s Dedication <br />& Birthday Celebration
           </h3>
-          <p className="leading-7 [&:not(:first-child)]:mt-6">
-            Minuyan San Jose Evangelical Church <br />
-            Bitonio’s Residence
-          </p>
-          <p className="leading-7 [&:not(:first-child)]:mt-6">
-            January 27, 2023 Saturday <br />
-            11:00 AM to 3:00 PM
+          <Separator />
+          <div className="flex gap-4 ">
+            <MapPin strokeWidth={1} size={20} />
+            <p className="text-sm leading-snug tracking-wider">
+              Minuyan San Jose Evangelical Church <br /> and Bitonio’s Residence
+            </p>
+          </div>
+          <div className="flex gap-4">
+            <Calendar strokeWidth={1} size={19} />
+            <p className="text-sm leading-snug tracking-wider">
+              January 27, 2023 Saturday <br />
+              11:00 AM to 3:00 PM
+            </p>
+          </div>
+          <p className="text-sm tracking-wide text-center">
+            We are excited to share this special day with you!
           </p>
         </div>
         <Button className="mb-10">Add to Calendar</Button>
