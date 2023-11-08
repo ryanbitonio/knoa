@@ -5,9 +5,9 @@ import { Link } from "react-router-dom";
 const Welcome = () => {
   return (
     <>
-      <div className="md:col-span-2">
+      <div className="md:h-screen md:col-span-2">
         <img
-          className="object-cover sm:h-auto md:h-screen"
+          className="object-cover md:w-[66.7%] md:fixed sm:h-auto md:h-screen"
           src={welcomeImage}
           alt="baby welcome image"
         />
