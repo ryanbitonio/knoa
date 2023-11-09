@@ -13,11 +13,11 @@ const Welcome = () => {
           alt="baby welcome image"
         />
       </div>
-      <div className="flex flex-col items-center justify-center gap-20 text-center ">
-        <p className="leading-7 [&:not(:first-child)]:mt-6">
+      <div className="flex flex-col items-center justify-center gap-16 py-10 text-center md:gap-20">
+        <p className="leading-7 [&:not(:first-child)]:mt-6 w-[63%]">
           Ryan & Mary <br /> invite you to the <br /> dedication of their son
         </p>
-        <h1 className="text-4xl tracking-tight scroll-m-20 lg:text-5xl">
+        <h1 className="text-4xl tracking-tight scroll-m-20 lg:text-5xl w-[63%]">
           ZEKKE KNOA <br /> A. BITONIO
         </h1>
         <Link to="/rsvp">

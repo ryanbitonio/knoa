@@ -12,11 +12,11 @@ const Schedule = () => {
           alt="baby welcome image"
         />
       </div>
-      <div className="flex flex-col items-center justify-center gap-32 text-left ">
+      <div className="flex flex-col items-center justify-center gap-20 py-10 text-left md:gap-32">
         <h1 className="text-4xl tracking-tight scroll-m-20 lg:text-5xl">
           Schedule
         </h1>
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-6 w-[63%]">
           <h3 className="text-center lg:text-2xl">
             Knoa’s Dedication <br />& Birthday Celebration
           </h3>
@@ -38,7 +38,7 @@ const Schedule = () => {
             We are excited to share this special day with you!
           </p>
         </div>
-        <Button className="mb-10">Add to Calendar</Button>
+        <Button className="">Add to Calendar</Button>
       </div>
     </>
   );

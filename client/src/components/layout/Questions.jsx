@@ -16,8 +16,8 @@ const Questions = () => {
           alt="baby welcome image"
         />
       </div>
-      <div className="flex flex-col items-center justify-center gap-20 text-left ">
-        <div className="flex flex-col items-center gap-10">
+      <div className="flex flex-col items-center justify-center gap-16 py-10 text-left md:gap-20">
+        <div className="flex flex-col items-center gap-10 w-[63%]">
           <h1 className="text-4xl tracking-tight lg:text-5xl">Q & A</h1>
           <p className="text-center">
             RSVP queries? Get your answers here <br /> before you hit that send
