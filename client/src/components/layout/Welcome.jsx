@@ -6,7 +6,7 @@ import { MoveDown } from "lucide-react";
 const Welcome = () => {
   return (
     <>
-      <div className="md:h-screen md:col-span-2">
+      <div id="home" className="md:h-screen md:col-span-2">
         <img
           className="object-cover md:w-[66.7%] md:fixed sm:h-auto md:h-screen"
           src={welcomeImage}

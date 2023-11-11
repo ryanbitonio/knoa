@@ -9,7 +9,7 @@ import {
 const Questions = () => {
   return (
     <>
-      <div className="md:h-screen md:col-span-2">
+      <div id="faq" className="md:h-screen md:col-span-2">
         <img
           className="object-cover sm:min-h-auto md:h-screen"
           src={scheduleImage}

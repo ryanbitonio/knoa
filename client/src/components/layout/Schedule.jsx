@@ -5,7 +5,7 @@ import { Separator } from "@/components/ui/separator";
 const Schedule = () => {
   return (
     <>
-      <div className="md:h-screen md:col-span-2">
+      <div id="schedule" className=" md:h-screen md:col-span-2">
         <img
           className="object-cover sm:min-h-auto md:h-screen"
           src={scheduleImage}
