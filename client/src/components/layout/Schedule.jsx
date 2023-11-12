@@ -16,7 +16,7 @@ const Schedule = () => {
         <h1 className="text-4xl tracking-tight scroll-m-20 lg:text-5xl">
           Schedule
         </h1>
-        <div className="flex flex-col gap-6 w-[63%]">
+        <div className="flex flex-col gap-8 w-[63%]">
           <h3 className="text-center lg:text-2xl">
             Knoa’s Dedication <br />& Birthday Celebration
           </h3>
@@ -34,7 +34,7 @@ const Schedule = () => {
               11:00 AM to 3:00 PM
             </p>
           </div>
-          <p className="text-sm tracking-wide text-center">
+          <p className="tracking-wide text-center">
             We are excited to share this special day with you!
           </p>
         </div>

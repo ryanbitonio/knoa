@@ -14,6 +14,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Menu } from "lucide-react";
+import { nav } from "./data/nav";
 
 function App() {
   return (
@@ -34,32 +35,20 @@ function App() {
             </SheetHeader>
             <Separator />
             <div className="flex flex-col items-start -ml-4">
-              <Button
-                className="justify-start w-full pl-4 text-lg font-normal tracking-wide"
-                variant="ghost"
-                asChild
-              >
-                <a href="#home">Home</a>
-              </Button>
-              <Button
-                className="justify-start w-full pl-4 text-lg font-normal tracking-wide"
-                variant="ghost"
-                asChild
-              >
-                <a href="#schedule">Schedule</a>
-              </Button>
-              <Button
-                className="justify-start w-full pl-4 text-lg font-normal tracking-wide"
-                variant="ghost"
-                asChild
-              >
-                <a href="#faq">Q & A</a>
-              </Button>
+              {nav.map(({ href, label }) => (
+                <Button
+                  className="justify-start w-full pl-4 text-lg font-normal tracking-wide"
+                  variant="ghost"
+                  asChild
+                >
+                  <a href={href}>{label}</a>
+                </Button>
+              ))}
             </div>
           </SheetContent>
         </Sheet>
       </div>
-      <div className="grid h-screen  md:grid-cols-3 sm:grid-cols-1">
+      <div className="grid h-screen md:grid-cols-3 sm:grid-cols-1">
         <Welcome />
         <Schedule />
         <Questions />

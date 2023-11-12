@@ -21,7 +21,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Loader2 } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
-import { rsvpAttendance, rsvpName } from "../../data/rsvp";
+import { response, fields } from "../../data/rsvp";
 import { formSchema } from "../../lib/validations/rsvp-form";
 import { useToast } from "../ui/use-toast";
 import axios from "axios";
@@ -74,7 +74,7 @@ const Rsvp = () => {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              {rsvpName.map(({ name, formLabel, placeholder }) => (
+              {fields.map(({ name, formLabel, placeholder }) => (
                 <FormField
                   control={control}
                   name={name}
@@ -104,7 +104,7 @@ const Rsvp = () => {
                         onValueChange={field.onChange}
                         defaultValue={field.value}
                       >
-                        {rsvpAttendance.map(({ value, label }) => (
+                        {response.map(({ value, label }) => (
                           <div
                             key={value}
                             tabIndex={0}
