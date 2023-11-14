@@ -6,14 +6,17 @@ import { MoveDown } from "lucide-react";
 const Welcome = () => {
   return (
     <>
-      <div id="home" className="md:h-screen md:col-span-2">
+      <div className="md:h-screen md:col-span-2 shrink-0">
         <img
-          className="object-cover md:w-[66.7%] md:fixed sm:h-auto md:h-screen"
+          className="object-cover md:w-[66.7%] md:fixed md:h-screen"
           src={welcomeImage}
           alt="baby welcome image"
         />
       </div>
-      <div className="flex flex-col items-center justify-center gap-16 py-10 text-center md:gap-20">
+      <div
+        id="home"
+        className="flex flex-col items-center justify-center gap-16 py-10 text-center md:gap-20"
+      >
         <p className="leading-7 [&:not(:first-child)]:mt-6 w-[63%]">
           Ryan & Mary <br /> invite you to the <br /> dedication of their son
         </p>

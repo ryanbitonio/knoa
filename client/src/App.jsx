@@ -35,8 +35,9 @@ function App() {
             </SheetHeader>
             <Separator />
             <div className="flex flex-col items-start -ml-4">
-              {nav.map(({ href, label }) => (
+              {nav.map(({ href, label }, index) => (
                 <Button
+                  key={index}
                   className="justify-start w-full pl-4 text-lg font-normal tracking-wide"
                   variant="ghost"
                   asChild
