@@ -1,19 +1,19 @@
-import "./App.css";
-import Questions from "./components/layout/Questions";
-import Schedule from "./components/layout/Schedule";
-import Welcome from "./components/layout/Welcome";
-import { Toaster } from "./components/ui/toaster";
+import { Button } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
 import {
   Sheet,
   SheetContent,
-  SheetDescription,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { Button } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
 import { Menu } from "lucide-react";
+import "./App.css";
+import welcomeImage from "./assets/welcome-img.jpg";
+import Questions from "./components/layout/Questions";
+import Schedule from "./components/layout/Schedule";
+import Welcome from "./components/layout/Welcome";
+import { Toaster } from "./components/ui/toaster";
 import { nav } from "./data/nav";
 
 function App() {
@@ -49,7 +49,14 @@ function App() {
           </SheetContent>
         </Sheet>
       </div>
-      <div className="grid h-screen md:grid-cols-3 sm:grid-cols-1">
+      <div className="grid md:grid-cols-3 sm:grid-cols-1">
+        <div className="md:col-span-2 shrink-0">
+          <img
+            className="object-cover md:w-[66.7%] md:fixed md:h-full"
+            src={welcomeImage}
+            alt="baby welcome image"
+          />
+        </div>
         <Welcome />
         <Schedule />
         <Questions />
