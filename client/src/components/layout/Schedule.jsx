@@ -6,7 +6,7 @@ const Schedule = () => {
   return (
     <div
       id="schedule"
-      className="flex flex-col items-center justify-center h-screen gap-16 px-12 md:col-start-3  "
+      className="flex flex-col items-center justify-center h-screen gap-16 px-12 lg:col-start-3  "
     >
       <h1 className="text-4xl tracking-tight  lg:text-5xl ">Schedule</h1>
       <div className="space-y-8 ">

@@ -49,9 +49,9 @@ function App() {
           </SheetContent>
         </Sheet>
       </div>
-      <div className="grid md:grid-cols-3 sm:grid-cols-1">
+      <div className="grid lg:grid-cols-3 md:grid-cols-1">
         <img
-          className="object-cover md:w-[66.7%] md:fixed md:h-full"
+          className="object-cover lg:w-[66.7%] lg:fixed lg:h-full"
           src={welcomeImage}
           alt="baby welcome image"
         />

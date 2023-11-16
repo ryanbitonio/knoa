@@ -6,7 +6,7 @@ const Welcome = () => {
   return (
     <div
       id="home"
-      className="flex flex-col items-center justify-center min-h-screen gap-16 px-12  text-center md:gap-20 md:col-start-3"
+      className="flex flex-col items-center justify-center min-h-screen gap-16 px-12  text-center lg:gap-20 lg:col-start-3"
     >
       <p className="leading-7 [&:not(:first-child)]:mt-6">
         Ryan & Mary <br /> invite you to the <br /> dedication of their son

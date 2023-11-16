@@ -10,7 +10,7 @@ const Questions = () => {
   return (
     <div
       id="faq"
-      className="flex flex-col justify-center min-h-screen gap-16 px-12  text-left md:col-start-3 md:gap-20"
+      className="flex flex-col justify-center min-h-screen gap-16 px-12  text-left lg:col-start-3 lg:gap-20"
     >
       <div className="flex flex-col items-center gap-10 ">
         <h1 className="text-4xl tracking-tight lg:text-5xl">Q & A</h1>
