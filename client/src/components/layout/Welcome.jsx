@@ -6,12 +6,12 @@ const Welcome = () => {
   return (
     <div
       id="home"
-      className="flex flex-col items-center justify-center min-h-screen gap-16 px-10 py-10 text-center md:gap-20 md:col-start-3"
+      className="flex flex-col items-center justify-center min-h-screen gap-16 px-12  text-center md:gap-20 md:col-start-3"
     >
       <p className="leading-7 [&:not(:first-child)]:mt-6">
         Ryan & Mary <br /> invite you to the <br /> dedication of their son
       </p>
-      <h1 className="text-4xl tracking-tight scroll-m-20 lg:text-5xl ">
+      <h1 className="text-4xl tracking-tight  lg:text-5xl ">
         ZEKKE KNOA <br /> A. BITONIO
       </h1>
       <Link to="/rsvp">
@@ -21,7 +21,7 @@ const Welcome = () => {
       </Link>
       <div className="flex flex-col items-center gap-10">
         <p className="leading-7 [&:not(:first-child)]:mt-6 ">View Details</p>
-        <MoveDown className="animate-bounce" />
+        <MoveDown strokeWidth={1.5} className="animate-bounce" />
       </div>
     </div>
   );

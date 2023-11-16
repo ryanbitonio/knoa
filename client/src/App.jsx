@@ -50,13 +50,11 @@ function App() {
         </Sheet>
       </div>
       <div className="grid md:grid-cols-3 sm:grid-cols-1">
-        <div className="md:col-span-2 shrink-0">
-          <img
-            className="object-cover md:w-[66.7%] md:fixed md:h-full"
-            src={welcomeImage}
-            alt="baby welcome image"
-          />
-        </div>
+        <img
+          className="object-cover md:w-[66.7%] md:fixed md:h-full"
+          src={welcomeImage}
+          alt="baby welcome image"
+        />
         <Welcome />
         <Schedule />
         <Questions />
