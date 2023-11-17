@@ -28,6 +28,11 @@ module.exports = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: 0 },
         },
+        "xfade": {
+          "17%": { opacity: 1 },
+          "25%": { opacity: 0 },
+          "92%": { opacity: 0 },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",

@@ -90,7 +90,7 @@ const Rsvp = () => {
                   )}
                 />
               ))}
-              <p className="leading-7 [&:not(:first-child)]:mt-4 mb-4">
+              <p className="leading-7 [&:not(:first-child)]:mt-4 mb-4 text-sm">
                 Will you be able to join us at our son’s dedication?
               </p>
 
