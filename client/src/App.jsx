@@ -9,13 +9,13 @@ import {
 } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
 import "./App.css";
-import welcomeImage from "./assets/welcome-img.jpg";
-import scheduleImage from "./assets/schedule-img.jpg";
+
 import Questions from "./components/layout/Questions";
 import Schedule from "./components/layout/Schedule";
 import Welcome from "./components/layout/Welcome";
 import { Toaster } from "./components/ui/toaster";
 import { nav } from "./data/nav";
+import { carousel } from "./data/slideshow";
 
 function App() {
   return (
@@ -52,34 +52,15 @@ function App() {
       </div>
       <div className="grid lg:grid-cols-3 md:grid-cols-1 grid-rows-3">
         <ul>
-          <li className="animate-[xfade_16s_12s_infinite]">
-            <img
-              className="object-cover lg:w-[66.7%] absolute lg:fixed min-h-screen"
-              src={welcomeImage}
-              alt="baby welcome image"
-            />
-          </li>
-          <li className="animate-[xfade_16s_8s_infinite]">
-            <img
-              className="object-cover lg:w-[66.7%] absolute lg:fixed min-h-screen"
-              src={scheduleImage}
-              alt="baby welcome image"
-            />
-          </li>
-          <li className="animate-[xfade_16s_4s_infinite]">
-            <img
-              className="object-cover lg:w-[66.7%] absolute lg:fixed min-h-screen"
-              src={welcomeImage}
-              alt="baby welcome image"
-            />
-          </li>
-          <li className="animate-[xfade_16s_0s_infinite]">
-            <img
-              className="object-cover lg:w-[66.7%] absolute lg:fixed min-h-screen"
-              src={scheduleImage}
-              alt="baby welcome image"
-            />
-          </li>
+          {carousel.map(({ animate, image }) => (
+            <li className={animate}>
+              <img
+                className="object-cover lg:w-[66.7%] absolute lg:fixed min-h-screen"
+                src={image}
+                alt="baby welcome image"
+              />
+            </li>
+          ))}
         </ul>
         <Welcome />
         <Schedule />
