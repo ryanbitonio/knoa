@@ -20,7 +20,7 @@ import { carousel } from "./data/slideshow";
 function App() {
   return (
     <>
-      <div className="fixed z-50 top-6 left-10">
+      <div className="fixed z-50 top-10 left-10">
         <Sheet>
           <SheetTrigger asChild className="focus-visible:rounded-full ">
             <Button
