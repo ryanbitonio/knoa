@@ -19,10 +19,12 @@ const Welcome = () => {
           RSVP
         </Button>
       </Link>
-      <div className="flex flex-col items-center gap-10">
-        <p className="leading-7 [&:not(:first-child)]:mt-6 ">View Details</p>
+      <a href="#schedule" className="flex flex-col items-center gap-8">
+        <p className="leading-7 [&:not(:first-child)]:mt-6  text-sm">
+          View Details
+        </p>
         <MoveDown strokeWidth={1.5} className="animate-bounce" />
-      </div>
+      </a>
     </div>
   );
 };
