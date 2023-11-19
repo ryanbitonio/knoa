@@ -5,7 +5,7 @@ import helmet from "helmet";
 
 const app = express();
 
-const ORIGIN = process.env.DEV_KNOA_CLIENT || process.env.PROD_KNOA_CLIENT;
+const ORIGIN = "http://localhost:5173" || process.env.PROD_KNOA_CLIENT;
 
 app.use(
   cors({
