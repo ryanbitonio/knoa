@@ -25,12 +25,12 @@ import { response, fields } from "../../data/rsvp";
 import { formSchema } from "../../lib/validations/rsvp-form";
 import { useToast } from "../ui/use-toast";
 import axios from "axios";
-import "dotenv/config";
 
 const Rsvp = () => {
   const navigate = useNavigate();
   const { toast } = useToast();
-  const KNOA_API = process.env.VITE_KNOA_API || "http://localhost:3000/guests";
+  const KNOA_API =
+    import.meta.env.VITE_KNOA_API || "http://localhost:3000/guests";
 
   const form = useForm({
     resolver: zodResolver(formSchema),
