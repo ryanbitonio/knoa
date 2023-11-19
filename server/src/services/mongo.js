@@ -11,7 +11,7 @@ mongoose.connection.on("error", err => {
 
 export async function mongoConnect() {
   await mongoose.connect(
-    process.env.DEV_MONGODB_URI || process.env.PROD_MONGODB_URI
+    process.env.PROD_MONGODB_URI || process.env.DEV_MONGODB_URI
   );
 }
 
