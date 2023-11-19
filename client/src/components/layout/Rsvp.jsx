@@ -25,6 +25,7 @@ import { response, fields } from "../../data/rsvp";
 import { formSchema } from "../../lib/validations/rsvp-form";
 import { useToast } from "../ui/use-toast";
 import axios from "axios";
+import "dotenv/config";
 
 const Rsvp = () => {
   const navigate = useNavigate();
