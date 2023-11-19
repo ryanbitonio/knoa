@@ -5,5 +5,9 @@ export async function getAllGuests() {
 }
 
 export async function addGuest(data) {
-  return await guests.create(data);
+  try {
+    return await guests.create(data);
+  } catch (error) {
+    console.log(error);
+  }
 }
