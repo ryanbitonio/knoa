@@ -2,6 +2,7 @@ import express from "express";
 import guestsRouter from "./routes/guests.router.js";
 import cors from "cors";
 import helmet from "helmet";
+import "dotenv/config";
 
 const app = express();
 
