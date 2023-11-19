@@ -1,4 +1,3 @@
-
 import { Calendar, MapPin } from "lucide-react";
 
 const Schedule = () => {
@@ -7,7 +6,7 @@ const Schedule = () => {
       id="schedule"
       className="flex flex-col items-center justify-center min-h-screen gap-16 px-12 lg:col-start-3  "
     >
-      <h1 className="text-4xl tracking-tight  lg:text-5xl ">Schedule</h1>
+      <h2 className="text-4xl tracking-tight  lg:text-5xl ">Schedule</h2>
       <div className="space-y-8 ">
         <h3 className="leading-snug tracking-wide text-center text-2xl font-medium">
           Knoa’s Dedication & Birthday Celebration

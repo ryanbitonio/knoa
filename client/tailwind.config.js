@@ -28,7 +28,7 @@ module.exports = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: 0 },
         },
-        "xfade": {
+        xfade: {
           "17%": { opacity: 1 },
           "25%": { opacity: 0 },
           "92%": { opacity: 0 },
@@ -37,6 +37,10 @@ module.exports = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+      },
+      fontSize: {
+        "clamp-h1": "clamp(3.75rem, 3.5rem + 1.25vw, 5rem)",
+        "clamp-h3": "clamp(1.125rem, 1.05rem + 0.375vw, 1.5rem)",
       },
     },
   },

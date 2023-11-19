@@ -20,7 +20,7 @@ import { carousel } from "./data/slideshow";
 function App() {
   return (
     <>
-      <div className="fixed z-50 top-6 left-6">
+      <div className="fixed z-50 top-6 left-10">
         <Sheet>
           <SheetTrigger asChild className="focus-visible:rounded-full ">
             <Button
@@ -50,17 +50,24 @@ function App() {
           </SheetContent>
         </Sheet>
       </div>
-      <div className="grid lg:grid-cols-3 md:grid-cols-1 grid-rows-3">
-        <ul>
-          {carousel.map(({ animate, image }) => (
-            <li className={animate}>
+      <div className="grid lg:grid-cols-3 md:grid-cols-1 grid-rows-2">
+        <ul className="relative">
+          {carousel.map(({ animate, image }, index) => (
+            <li key={index} className={animate}>
               <img
-                className="object-cover lg:w-[66.7%] absolute lg:fixed min-h-screen"
+                className="object-cover lg:w-[66.7%] absolute   lg:fixed min-h-screen"
                 src={image}
                 alt="baby welcome image"
               />
             </li>
           ))}
+          <div className="space-y-8 absolute bottom-10 left-10 right-10 lg:right-[40%] text-white lg:fixed">
+            <h1 className="text-clamp-h1 leading-10">Knoa</h1>
+            <p className="text-clamp-h3">
+              We can't wait to celebrate our baby's dedication and birthday with
+              you!
+            </p>
+          </div>
         </ul>
         <Welcome />
         <Schedule />

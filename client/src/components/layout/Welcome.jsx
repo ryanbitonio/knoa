@@ -11,9 +11,9 @@ const Welcome = () => {
       <p className="leading-7 [&:not(:first-child)]:mt-6">
         Ryan & Mary <br /> invite you to the <br /> dedication of their son
       </p>
-      <h1 className="text-4xl tracking-tight  lg:text-5xl ">
+      <h2 className="text-4xl tracking-tight  lg:text-5xl ">
         ZEKKE KNOA <br /> A. BITONIO
-      </h1>
+      </h2>
       <Link to="/rsvp">
         <Button variant="outline" className="">
           RSVP
