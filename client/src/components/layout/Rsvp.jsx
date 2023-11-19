@@ -29,6 +29,8 @@ import axios from "axios";
 const Rsvp = () => {
   const navigate = useNavigate();
   const { toast } = useToast();
+  const KNOA_API =
+    import.meta.env.VITE_KNOA_API || "http://localhost:3000/guests";
 
   const form = useForm({
     resolver: zodResolver(formSchema),
@@ -47,7 +49,7 @@ const Rsvp = () => {
 
   async function onSubmit(values) {
     try {
-      await axios.post("http://localhost:3000/guests", values);
+      await axios.post(KNOA_API, values);
 
       toast({
         title: "Successfully Added!",
