@@ -16,7 +16,7 @@ const Welcome = () => {
       </h2>
       <Link to="/rsvp">
         <Button variant="outline" className="">
-          RSVP
+          Click to RSVP
         </Button>
       </Link>
       <a href="#schedule" className="flex flex-col items-center gap-8">

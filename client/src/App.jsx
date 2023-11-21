@@ -16,6 +16,7 @@ import Welcome from "./components/layout/Welcome";
 import { Toaster } from "./components/ui/toaster";
 import { nav } from "./data/nav";
 import { carousel } from "./data/slideshow";
+import { Link } from "react-router-dom";
 
 function App() {
   return (
@@ -47,6 +48,20 @@ function App() {
                 </Button>
               ))}
             </div>
+            <Separator />
+            <div className="flex flex-col items-start -ml-4">
+              <Button
+                variant="ghost"
+                className="justify-start w-full pl-4 text-lg font-normal tracking-wide"
+                asChild
+              >
+                <Link to="/rsvp">RSVP</Link>
+              </Button>
+            </div>
+            <p className="text-sm absolute bottom-10 pr-10 tracking-wide">
+              Made with <span className="text-red-500">❤</span> by
+              <strong> Ryan Bitonio</strong>
+            </p>
           </SheetContent>
         </Sheet>
       </div>
