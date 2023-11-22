@@ -19,6 +19,9 @@ module.exports = {
       },
     },
     extend: {
+      height: {
+        screen: ["100vh /* fallback for Opera, IE and etc. */", "100dvh"],
+      },
       keyframes: {
         "accordion-down": {
           from: { height: 0 },
