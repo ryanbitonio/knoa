@@ -21,7 +21,7 @@ import { Link } from "react-router-dom";
 function App() {
   return (
     <>
-      <div className="fixed z-50 top-10 left-10">
+      <nav className="fixed z-50 top-10 left-10">
         <Sheet>
           <SheetTrigger asChild className="focus-visible:rounded-full ">
             <Button
@@ -64,13 +64,13 @@ function App() {
             </p>
           </SheetContent>
         </Sheet>
-      </div>
-      <div className="grid lg:grid-cols-3 md:grid-cols-1 grid-rows-2">
+      </nav>
+      <main className="grid lg:grid-cols-3 md:grid-cols-1 grid-rows-2">
         <ul className="relative">
           {carousel.map(({ animate, image }, index) => (
             <li key={index} className={animate}>
               <img
-                className="object-cover lg:w-[66.7%] absolute   lg:fixed min-h-screen"
+                className="object-cover lg:w-[66.7%] absolute lg:fixed min-h-screen"
                 src={image}
                 alt="baby welcome image"
               />
@@ -88,7 +88,7 @@ function App() {
         <Schedule />
         <Questions />
         <Toaster />
-      </div>
+      </main>
     </>
   );
 }

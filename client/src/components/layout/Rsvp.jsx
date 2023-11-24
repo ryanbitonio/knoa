@@ -103,6 +103,7 @@ const Rsvp = () => {
                   <FormItem>
                     <FormControl>
                       <RadioGroup
+                        tabIndex={-1}
                         onValueChange={field.onChange}
                         defaultValue={field.value}
                       >
@@ -133,7 +134,7 @@ const Rsvp = () => {
               />
             </CardContent>
             <CardFooter className="flex justify-between">
-              <Link to="/">
+              <Link tabIndex={-1} to="/">
                 <Button variant="outline">Cancel</Button>
               </Link>
               <Button disabled={isSubmitting} type="submit">
