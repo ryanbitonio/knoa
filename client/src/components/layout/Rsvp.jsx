@@ -49,8 +49,6 @@ const Rsvp = () => {
 
   async function onSubmit(values) {
     try {
-      await axios.post(KNOA_API, values);
-
       toast({
         title: "Successfully Added!",
         description: "We appreciate your response.",
@@ -59,6 +57,8 @@ const Rsvp = () => {
 
       reset();
       navigate("/");
+
+      await axios.post(KNOA_API, values);
     } catch (err) {
       console.error(err);
     }
