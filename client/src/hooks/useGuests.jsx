@@ -9,8 +9,8 @@ const useGuests = () => {
   useEffect(() => {
     const fetchGuests = async () => {
       const response = await axios.get(KNOA_API);
-      const guests = response.data;
-      setGuests(guests);
+      const guestsList = await response.data;
+      setGuests(guestsList);
     };
 
     fetchGuests();
