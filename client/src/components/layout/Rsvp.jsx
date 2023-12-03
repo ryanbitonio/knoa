@@ -53,14 +53,14 @@ const Rsvp = () => {
 
   async function onSubmit(values) {
     const isResponded = guests
-      .map(guest => `${guest.firstName} ${guest.lastName}`)
+      ?.map(guest => `${guest.firstName} ${guest.lastName}`)
       .some(
         guest =>
           guest.toLowerCase() ===
           `${values.firstName.toLowerCase()} ${values.lastName.toLowerCase()}`
       );
 
-    if (!isResponded) {
+    if (!isResponded || isResponded === undefined) {
       try {
         toast({
           title: "Successfully Added!",
