@@ -53,7 +53,7 @@ const Rsvp = () => {
 
   async function onSubmit(values) {
     const isResponded = await guests
-      .map(guest => `${guest.firstName} ${guest.lastName}`)
+      ?.map(guest => `${guest.firstName} ${guest.lastName}`)
       .some(
         guest =>
           guest.toLowerCase() ===
