@@ -52,8 +52,8 @@ const Rsvp = () => {
   } = form;
 
   async function onSubmit(values) {
-    const isResponded = await guests
-      ?.map(guest => `${guest.firstName} ${guest.lastName}`)
+    const isResponded = guests
+      .map(guest => `${guest.firstName} ${guest.lastName}`)
       .some(
         guest =>
           guest.toLowerCase() ===
