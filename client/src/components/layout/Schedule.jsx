@@ -4,18 +4,18 @@ const Schedule = () => {
   return (
     <div
       id="schedule"
-      className="flex flex-col items-center justify-center min-h-screen gap-16 px-12 lg:col-start-3  py-10"
+      className="flex flex-col items-center justify-center min-h-screen gap-16 px-12 py-10 lg:col-start-3"
     >
-      <h2 className="text-4xl tracking-tight  lg:text-5xl ">Schedule</h2>
+      <h2 className="text-4xl tracking-tight lg:text-5xl ">Schedule</h2>
       <div className="space-y-8 ">
-        <h3 className="leading-snug tracking-wide text-center text-2xl font-medium">
+        <h3 className="text-2xl font-medium leading-snug tracking-wide text-center">
           Knoa’s Dedication & Birthday Celebration
         </h3>
         <div className="flex gap-4">
           <Calendar strokeWidth={1} size={19} className="shrink-0" />
           <p className="leading-snug tracking-wider text-left">
-            The event will take place on Saturday, January 27, 2023, from 11:00
-            AM to 3:00 PM
+            The event will take place on Saturday, January 27, 2023, from 3:00
+            PM to 6:00 PM
           </p>
         </div>
         <div className="flex gap-4 ">
