@@ -26,17 +26,11 @@ export const questions = [
     value: "item-5",
     question: "What time should I arrive?",
     answer:
-      "We would love for you to arrive before 11:00 AM. Your early arrival would be greatly appreciated.",
+      "We would love for you to arrive before 3:00 PM. Your early arrival would be greatly appreciated.",
   },
+
   {
     value: "item-6",
-    question:
-      "Will I get a chance to take professional photos with the couple?",
-    answer:
-      "Yes, we have a photographer on the event day. We will be taking photos throughout the day to capture all the special moments. ",
-  },
-  {
-    value: "item-7",
     question: "Whom should I call with questions?",
     answer:
       "Feel free to message us on Facebook, Ryan Bitonio/Mary Joy Aquino.",

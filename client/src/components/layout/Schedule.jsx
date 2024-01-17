@@ -15,7 +15,7 @@ const Schedule = () => {
           <Calendar strokeWidth={1} size={19} className="shrink-0" />
           <p className="leading-snug tracking-wider text-left">
             The event will take place on Saturday, January 27, 2023, from 3:00
-            PM to 6:00 PM
+            PM to 5:00 PM
           </p>
         </div>
         <div className="flex gap-4 ">
